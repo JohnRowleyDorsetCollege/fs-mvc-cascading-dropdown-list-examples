@@ -1,0 +1,35 @@
+﻿@model CountryStateViewModel
+<div>
+    <label for="countries">Select Country:</label>
+    <select id="countries" name="countries" onchange="loadStates()" class="form-control">
+        <option value="">-- Select a Country --</option>
+        @foreach (var country in ViewBag.Countries as IEnumerable<string>)
+        {
+            <option value="@country">@country</option>
+        }
+    </select>
+</div>
+<div>
+    <label for="states">Select State:</label>
+    <select id="states" name="states" class="form-control">
+        <option value="">-- Select a State --</option>
+    </select>
+</div>
+<script>
+    async function loadStates() {
+        const country = document.getElementById('countries').value;
+        const statesDropdown = document.getElementById('states');
+        statesDropdown.innerHTML = '<option value="">-- Select a State --</option>';
+
+        if (country) {
+            const response = await fetch(`/Home/GetStates?country=${country}`);
+            const states = await response.json();
+            states.forEach(state => {
+                const option = document.createElement('option');
+                option.value = state;
+                option.textContent = state;
+                statesDropdown.appendChild(option);
+            });
+        }
+    }
+</script>
