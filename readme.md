@@ -40,4 +40,16 @@ private static readonly Dictionary<string, List<string>> SportTeamData = new()
     { "Cricket", new List<string> { "India", "Australia", "England" } }
 };
 
+private static readonly Dictionary<string, List<string>> GenreSubGenreData = new()
+{
+    { "Action", new List<string> { "Superhero", "Spy", "Martial Arts", "Adventure" } },
+    { "Comedy", new List<string> { "Slapstick", "Romantic Comedy", "Parody", "Dark Comedy" } },
+    { "Drama", new List<string> { "Historical Drama", "Romantic Drama", "Crime Drama", "Legal Drama" } },
+    { "Horror", new List<string> { "Psychological Horror", "Slasher", "Supernatural", "Found Footage" } },
+    { "Science Fiction", new List<string> { "Space Opera", "Cyberpunk", "Time Travel", "Dystopian" } },
+    { "Fantasy", new List<string> { "Epic Fantasy", "Urban Fantasy", "Sword and Sorcery", "Dark Fantasy" } },
+    { "Thriller", new List<string> { "Psychological Thriller", "Crime Thriller", "Political Thriller", "Techno-Thriller" } }
+};
+
+
 https://chatgpt.com/share/6797e0d9-6c54-800c-acac-9cd1ce75f421
